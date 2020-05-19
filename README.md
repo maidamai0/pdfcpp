@@ -5,6 +5,8 @@ pdf manipulate library
 ## Build
 
 * PODOFO_BUILD_LIB_ONLY build podofo without tools,test...
+* PODOFO_BUILD_STATIC build static verison
+* PODOFO_BUILD_SHARED build shared verison
 
 ## dependency
 
