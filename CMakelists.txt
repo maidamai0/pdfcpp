@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.10)
+
+get_filename_component(PROJECT ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+project(${PROJECT} CXX)
+
+# dependency
+add_subdirectory(deps)
+
+# for dev, in podofo is installed on your system, these two lines should not be needed.
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/podofo-0.9.6/)
+include_directories(${PoDoFo_BINARY_DIR})
+
+# see deps/podofo-0.9.6/src/CMakelists.txt
+link_libraries(podofo_static)
+
+# examples
+add_subdirectory(examples)

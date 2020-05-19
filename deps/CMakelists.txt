@@ -1,0 +1,8 @@
+# freetype depends on bzip
+# for windows with vcpkg
+if(MSVC)
+    find_package(BZip2 REQUIRED)
+    set(BZIP2_LIBRARIES BZip2::BZip2)
+endif(MSVC)
+
+add_subdirectory(podofo-0.9.6)
