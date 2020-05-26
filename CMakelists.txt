@@ -5,6 +5,8 @@ project(${PROJECT} CXX)
 
 # # dependency
 # add_subdirectory(deps)
+# build static version of podofo
+# set(PODOFO_BUILD_STATIC TRUE)
 
 # # for dev, in podofo is installed on your system, these two lines should not be needed.
 # include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/podofo-0.9.6/)
