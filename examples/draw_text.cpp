@@ -1,4 +1,5 @@
 #include "podofo/podofo.h"
+#include "src/base/PdfEncodingFactory.h"
 
 #include <iostream>
 
@@ -15,7 +16,9 @@ auto main(int argc, char **argv) -> int {
   painter.SetPage(page);
 
   // font
-  const auto font = doc.CreateFont("Arial");
+  const auto font = doc.CreateFont(
+      "Arial Unicode MS", false,
+      PoDoFo::PdfEncodingFactory::GlobalIdentityEncodingInstance());
   if (!font) {
     PODOFO_RAISE_ERROR(PoDoFo::ePdfError_InvalidHandle);
   }
@@ -24,9 +27,10 @@ auto main(int argc, char **argv) -> int {
   painter.SetColor(0.8, 0.4, 0.2);
 
   // Draw text
-  painter.DrawText(10,
-                   page->GetPageSize().GetHeight() - 10 - font->GetFontSize(),
-                   "left 10, top 10");
+  PoDoFo::PdfString pString(
+      reinterpret_cast<const PoDoFo::pdf_utf8 *>("left 10, top 10:你好，世界"));
+  painter.DrawText(
+      10, page->GetPageSize().GetHeight() - 10 - font->GetFontSize(), pString);
   painter.FinishPage();
 
   // meta data
