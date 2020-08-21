@@ -2,6 +2,8 @@ file(GLOB sources "*.cpp")
 
 add_compile_definitions(RESOURCE_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resources/")
 
+set(CMAKE_CXX_STANDARD 17)
+
 foreach(src ${sources})
 	get_filename_component(TARGET ${src} NAME_WLE)
 	message(STATUS "${TARGET} added")

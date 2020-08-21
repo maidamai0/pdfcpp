@@ -4,8 +4,6 @@
 #include <tuple>
 
 #include "podofo/podofo.h"
-#include "src/doc/PdfImage.h"
-#include "src/doc/PdfPage.h"
 
 #ifndef RESOURCE_PATH
 #define RESOURCE_PATH "./"
