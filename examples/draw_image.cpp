@@ -14,12 +14,18 @@ auto main(int argc, char **argv) -> int {
     PODOFO_RAISE_ERROR(PoDoFo::ePdfError_InvalidHandle);
   }
   painter.SetPage(page);
+  // painter.FinishPage();
+
+  // page 2
+  const auto page2 = doc.CreatePage(
+      PoDoFo::PdfPage::CreateStandardPageSize(PoDoFo::ePdfPageSize_A4));
+  painter.SetPage(page2);
 
   // image
   PoDoFo::PdfImage image(&doc);
   image.LoadFromFile(
-      common::full_path("peaks_alone_loneliness_125128_3840x2160.jpg").c_str());
-  painter.DrawImage(0, 0, &image, 0.1, 0.1);
+      R"(C:\Program Files (x86)\Common Files\Trophy\Acquisition\DriverAltair\resources\shade_report\report_logo.png)");
+  painter.DrawImage(0, 0, &image);
   painter.FinishPage();
 
   // meta data
