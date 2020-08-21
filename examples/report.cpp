@@ -16,8 +16,7 @@ auto insert_image_in_table() {
   report.UseFont("Arial Unicode MS");
   auto table = report.CreateTable(3, 3);
   table->SetImage(
-      1, 1,
-      common::full_path("peaks_alone_loneliness_125128_3840x2160.jpg").c_str());
+      1, 1, full_path("peaks_alone_loneliness_125128_3840x2160.jpg").c_str());
   report.DrawTable(100, 100, table);
   report.Generate();
 }
