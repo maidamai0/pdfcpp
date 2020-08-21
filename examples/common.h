@@ -13,6 +13,7 @@
 
 constexpr auto a4_page_width = 595.0;
 constexpr auto a4_page_height = 842.0;
+constexpr auto font_arial_unicode_ms = "Arial Unicode MS";
 
 [[maybe_unused]] inline auto full_path(std::string &&file_name) {
   return std::string(RESOURCE_PATH) + file_name;

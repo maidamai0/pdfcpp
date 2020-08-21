@@ -1,7 +1,5 @@
+#include "common.h"
 #include "podofo/podofo.h"
-#include "src/base/PdfEncodingFactory.h"
-#include "src/doc/PdfFontCache.h"
-
 #include <iostream>
 
 auto main(int argc, char **argv) -> int {
@@ -18,7 +16,7 @@ auto main(int argc, char **argv) -> int {
 
   // font
   const auto font = doc.CreateFontSubset(
-      "Arial Unicode MS", false, false, false,
+      font_arial_unicode_ms, false, false, false,
       PoDoFo::PdfEncodingFactory::GlobalIdentityEncodingInstance());
   if (!font) {
     PODOFO_RAISE_ERROR(PoDoFo::ePdfError_InvalidHandle);

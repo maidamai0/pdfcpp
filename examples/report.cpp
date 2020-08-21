@@ -4,7 +4,7 @@
 
 auto insert_table() {
   PdfReport report("table.pdf");
-  report.UseFont("Arial Unicode MS");
+  report.UseFont(font_arial_unicode_ms);
   // add a table
   auto table = report.CreateTable(3, 3);
   report.DrawTable(10, 10, table);
@@ -13,7 +13,7 @@ auto insert_table() {
 
 auto insert_image_in_table() {
   PdfReport report("draw_image_in_table.pdf");
-  report.UseFont("Arial Unicode MS");
+  report.UseFont(font_arial_unicode_ms);
   auto table = report.CreateTable(3, 3);
   table->SetImage(
       1, 1, full_path("peaks_alone_loneliness_125128_3840x2160.jpg").c_str());
