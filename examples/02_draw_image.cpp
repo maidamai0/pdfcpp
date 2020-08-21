@@ -23,9 +23,11 @@ auto main(int argc, char **argv) -> int {
 
   // image
   PoDoFo::PdfImage image(&doc);
-  image.LoadFromFile(
-      R"(C:\Program Files (x86)\Common Files\Trophy\Acquisition\DriverAltair\resources\shade_report\report_logo.png)");
-  painter.DrawImage(0, 0, &image);
+  image.LoadFromFile(full_path("smile_upside_down.png").c_str());
+
+  auto [x, y] = get_position_for_center(image);
+
+  painter.DrawImage(x, y, &image);
   painter.FinishPage();
 
   // meta data
