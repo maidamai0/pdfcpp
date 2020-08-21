@@ -6,6 +6,6 @@
 #define RESOURCE_PATH "./"
 #endif
 
-inline static auto full_path(std::string &&file_name) {
+[[maybe_unused]] inline static auto full_path(std::string &&file_name) {
   return std::string(RESOURCE_PATH) + file_name;
 }
